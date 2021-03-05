@@ -102,7 +102,9 @@ public final class ProtocolVanish extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        this.messagingService.getProvider().clearMessages();
+        if(this.messagingService != null){
+            this.messagingService.getProvider().clearMessages();
+        }
     }
 
     public void reload(){
